@@ -92,11 +92,7 @@ This is a RAID status update from megaclisas-statusd.  The megaclisas-status
 program reports that one of the RAIDs changed state:
 
 EOF
-                if [ -f $STATUSFILE ] ; then
-                    cat $STATUSFILE
-                else
-                    (megaclisas-status --notemp)
-                fi
+                (megaclisas-status)
                 echo
                 echo "Report from $0 on $hostname"
             ) | mail -s "info: MegaRAID raid status change on $hostname" $MAILTO
